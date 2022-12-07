@@ -1,7 +1,8 @@
-import { Statistic } from "./Statistic/Statistic";
+import { Section } from "components/Sections/Sections";
 
 export const App = () => {
   return (
-    <Statistic title="Please leave feedback"/>
+    <Section title="Please leave feedback" />
     );
 };
+

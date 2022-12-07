@@ -1,26 +1,23 @@
-// import { Component } from "react";
-// import {Statistic} from "../Statistic/Statistic";
+import PropTypes from 'prop-types';
+import {Container, Buttons} from 'components/StatisticButtons/StatisticButtons.styled'
 
-// export class StatisticButtons extends Component {
-//     state = {
-//         good: 0,
-//         neutral: 0,
-//         bad: 0
-//         }
+export const FeedbackOptions = ({options, onLeaveFeedback}) => {
+    return (
+        <Container>
+            {options.map((option) => {
+            const label = option.slice(0, 1).toUpperCase() + option.slice(1);
+                return (
+                    <Buttons key={option} onClick={onLeaveFeedback} name={option}>
+                    {label}
+                    </Buttons>
+                );
+            })}
+        </Container>
+    )
 
-//         render()  {
-//             const {
-//                 buttons: {
-//                     good,
-//                     neutral,
-//                     bad,
-//                 }
-//             } = this.this.props;
-//         } 
+};
 
-//         return(
-//             <Statistic>
-            
-//             <Statistic/>
-//         )
-// }
+FeedbackOptions.propTypes = {
+    options: PropTypes.array.isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
+}
