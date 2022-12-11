@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Container, Buttons} from 'components/StatisticButtons/StatisticButtons.styled'
+import {Container, Buttons} from 'components/FeedbackOptions/FeedbackOptions.styled'
 
 export const FeedbackOptions = ({options, onLeaveFeedback}) => {
     return (
@@ -18,6 +18,7 @@ export const FeedbackOptions = ({options, onLeaveFeedback}) => {
 };
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.array.isRequired,
+    options: PropTypes.arrayOf(
+        PropTypes.string.isRequired).isRequired,
     onLeaveFeedback: PropTypes.func.isRequired,
 }
